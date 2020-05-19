@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://schema.org/WebPage" lang="en">
+<head>
+<meta charset="utf-8">
+<title>Music</title>
+<meta name="description" content="The Holy Grail refers to a web page layout which has multiple, equal height columns that are defined with style sheets.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<link href="./favicon.ico" rel="shortcut icon">
+<link href="./styles/app.css" rel="stylesheet">
+<link href="./styles/flex.css" rel="stylesheet">
+<link href="./styles/nav.css" rel="stylesheet">
+<link href="./styles/theme.css" rel="stylesheet">
+<style type="text/css">
+.row {display: flex;}
+label, input, select, textarea, button {display: block; font-size: 1em; width: 100%}
+input, select, textarea, button {background: #fff; border: solid 1px #666; border-radius: 5px; height: 2.5em; margin: .25em 0 1.25em; padding: .5em }
+textarea {height: 18em; resize: none;}
+button {display: inline-block; height: auto; margin-right: .75em; padding: .75em 1em; width: 6em }
+</style>
+</head>
+<body>
+  <header>
+    <h1>&nbsp;</h1>
+  </header>
+  <div id="main">
+    <article>
+      <div>
+        <label>BPM:</label>
+        <input id="bpm" type="number" value="600">
+      </div>
+      <div>
+        <label>Note Length:</label>
+        <select id="note_length">
+          <option value="4" selected>Whole</option>
+          <option value="2">Half</option>
+          <option value="1">Quarter</option>
+          <option value="0.5">Eighth</option>
+          <option value="0.25">Sixteenth</option>
+        </select>
+      </div>
+      <div>
+        <label>Wave Type:</label>
+        <select id="wave_type">
+          <option>Sine</option>
+          <option>Square</option>
+          <option>Sawtooth</option>
+          <option selected>Triangle</option>
+        </select>
+      </div>
+      <div>
+        <label>Octave:</label>
+        <select id="octave">
+          <option>3</option>
+          <option selected>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div>
+        <label>Scale:</label>
+        <select id="scale">
+          <option value="A_MAJOR">A major</option>
+          <option value="C_SHARP_MINOR">C# minor</option>
+          <option value="E_MAJOR" selected>E major</option>
+          <option value="E_MINOR">E minor</option>
+        </select>
+      </div>
+    </article>
+    <aside>
+      <label>Digits / Preset:</label>
+      <!--select id="preset">
+        <option value="PI">50 of Pi number</option>
+        <option value="FI">64 of Fibonacci</option>
+        <option value="FE">Fur Elise</option>
+      </select-->
+      <input list="preset-list" id="preset" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+      <datalist id="preset-list">
+        <option value="PI">50 of Pi number</option>
+        <option value="FI">64 of Fibonacci</option>
+        <option value="FE">Fur Elise</option>
+      </datalist>
+      <label>Notes:</label>
+      <textarea id="notes"></textarea>
+      <label>&nbsp;</label>
+      <button type="button" onclick="play()">Play</button>
+      <button type="button" onclick="stop()">Stop</button>
+    </aside>
+  </div>
+  <footer>&nbsp;</footer>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
